@@ -21,11 +21,11 @@ export default class App extends React.Component {
     }
 
     runTimer = () => {
-        if (this.state.isTimerOneActive) {
+        if (this.state.isTimerOneActive && this.state.timer1 > 0) {
             this.setState(prevState => ({
                 timer1: prevState.timer1 - 1
             }));
-        } else {
+        } else if (this.state.timer2 > 0) {
             this.setState(prevState => ({
                 timer2: prevState.timer2 - 1
             }));
